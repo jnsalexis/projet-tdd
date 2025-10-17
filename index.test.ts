@@ -45,6 +45,9 @@ class Cart {
     this.total += product.price;
   }
   getTotal() {
+    if (this.total > 100) {
+      this.total -= this.total * 0.1;
+    }
     return this.total;
   }
 }
