@@ -21,6 +21,13 @@ test('Doit ajouter un produit au panier et obtenir le total', () => {
   expect(cart.total).toBe(2.50);
 })
 
+test('Doit calculer le total de plusieurs produits', () => {
+  const cart = new Cart([], 0);
+  cart.addProduct(new Product("Pomme", 2.50));
+  cart.addProduct(new Product("Banane", 2.50));
+  expect(cart.getTotal()).toBe(5.00);
+});
+
 class Product {
   constructor(public name: string, public price: number) {}
 }
