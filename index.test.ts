@@ -8,6 +8,17 @@ describe('Product', () => {
   });
 });
 
+describe('Cart', () => {
+  test('Doit retourner 0 pour un panier vide', () => {
+    const cart = new Cart([], 0);
+    expect(cart.total).toBe(0);
+  });
+});
+
 class Product {
   constructor(public name: string, public price: number) {}
+}
+
+class Cart {
+  constructor(public products: Product[], public total: number) {}
 }
