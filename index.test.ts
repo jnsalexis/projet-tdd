@@ -15,6 +15,12 @@ describe('Cart', () => {
   });
 });
 
+test('Doit ajouter un produit au panier et obtenir le total', () => {
+  const cart = new Cart([], 0);
+  cart.addProduct(new Product("Pomme", 2.50));
+  expect(cart.total).toBe(2.50);
+})
+
 class Product {
   constructor(public name: string, public price: number) {}
 }
