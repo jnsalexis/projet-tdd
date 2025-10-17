@@ -48,6 +48,12 @@ test('Doit gérer correctement les calculs avec décimales', () => {
   expect(cart.getTotal()).toBe(100.00);
 });
 
+test('Doit appliquer la réduction avec des décimales correctement', () => {
+  const cart = new Cart([], 0);
+  cart.addProduct(new Product("Produit", 111.11));
+  expect(cart.getTotal()).toBe(99.999);
+});
+
 class Product {
   constructor(public name: string, public price: number) {}
 }
