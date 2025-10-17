@@ -7,3 +7,7 @@ describe('Product', () => {
     expect(product.price).toBe(2.50);
   });
 });
+
+class Product {
+  constructor(public name: string, public price: number) {}
+}
