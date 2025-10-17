@@ -27,4 +27,8 @@ class Product {
 
 class Cart {
   constructor(public products: Product[], public total: number) {}
+  addProduct(product: Product) {
+    this.products.push(product);
+    this.total += product.price;
+  }
 }
