@@ -38,4 +38,7 @@ class Cart {
     this.products.push(product);
     this.total += product.price;
   }
+  getTotal() {
+    return this.total;
+  }
 }
