@@ -40,6 +40,14 @@ test('Cas limite de 100€, pas de réduction', () => {
   expect(cart.getTotal()).toBe(100.00);
 })
 
+test('Doit gérer correctement les calculs avec décimales', () => {
+  const cart = new Cart([], 0);
+  cart.addProduct(new Product("Produit1", 33.33));
+  cart.addProduct(new Product("Produit2", 33.33));
+  cart.addProduct(new Product("Produit3", 33.34));
+  expect(cart.getTotal()).toBe(100.00);
+});
+
 class Product {
   constructor(public name: string, public price: number) {}
 }
