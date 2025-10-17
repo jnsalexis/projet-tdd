@@ -28,6 +28,12 @@ test('Doit calculer le total de plusieurs produits', () => {
   expect(cart.getTotal()).toBe(5.00);
 });
 
+test('Doit appliquer une réduction pour > 100€', () => {
+  const cart = new Cart([], 0);
+  cart.addProduct(new Product("Pomme de luxe", 120.00));
+  expect(cart.getTotal()).toBe(108.00);
+})
+
 class Product {
   constructor(public name: string, public price: number) {}
 }
