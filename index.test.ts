@@ -33,6 +33,12 @@ test('Doit appliquer une réduction pour > 100€', () => {
   cart.addProduct(new Product("Pomme de luxe", 120.00));
   expect(cart.getTotal()).toBe(108.00);
 })
+  
+test('Cas limite de 100€, pas de réduction', () => {
+  const cart = new Cart([], 0);
+  cart.addProduct(new Product("Pomme de luxe", 100.00));
+  expect(cart.getTotal()).toBe(100.00);
+})
 
 class Product {
   constructor(public name: string, public price: number) {}
